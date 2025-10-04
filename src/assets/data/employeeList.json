@@ -1,0 +1,26 @@
+[
+    {
+        "empid" : 4211,
+        "emp_name" : "Saravanan",
+        "designation" : "IT-Analyst",
+        "workLocation":"Chennai"
+    },
+    {
+        "empid" : 4212,
+        "emp_name" : "SarathKumar",
+        "designation" : "IT-Software",
+        "workLocation":"Banglore"
+    },
+    {
+        "empid" : 4213,
+        "emp_name" : "VimalRaj",
+        "designation" : "IT-tester",
+        "workLocation":"Hyderabhad"
+    },
+    {
+        "empid" : 4214,
+        "emp_name" : "Samuel",
+        "designation" : "IT-Support",
+        "workLocation":"Gurgan"
+    }
+]
