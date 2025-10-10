@@ -1,5 +1,4 @@
-import { Fragment, useState } from "react";
-import EmployeeList from "../assets/data/employeeList.json";
+import { Fragment, useEffect, useState } from "react";
 import { AddEmployee } from "./AddEmployee";
 import { ListAction } from "./ListAction";
 import { SearchEmployee } from "./SearchEmployee";
@@ -7,9 +6,21 @@ import { TableViewList } from "./TableViewList";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function EmployeeListIndex() {
-  const [list, setList] = useState(EmployeeList);
+  const [list, setList] = useState();
   const [searchText, setSearchText] = useState(null);
 
+  useEffect(()=>{
+    getApiCall()
+  },[]);
+
+  const getApiCall = async()=> {
+    let url = './public/employeeList.json';
+    let response = await fetch(url);
+    let responseData = await response.json();
+    if (response && responseData) {
+      setList(responseData)
+    }
+  };
   const handleUpdate = (profileIndex) => {
     const updatedList = list.map((value, index) => {
       if (profileIndex == index) {
